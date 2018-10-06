@@ -1,0 +1,90 @@
+{
+  "version": 1,
+  "command": {
+    "name": "ffmpeg",
+    "version": "4",
+    "arguments": [
+      {
+        "name": "Video input",
+        "arg": ["-i"],
+        "type": "string",
+        "defaultValue": "video.mp4",
+        "repeat": true
+      },
+      {
+        "name": "Video codec",
+        "arg": ["-c:v"],
+        "type": "option",
+        "optionValues": ["copy", "libx264", "libx265", "libvpx", "libvpx-vp9"],
+        "defaultValue": "copy",
+        "allowed": {
+          "if": ["Video input"]
+        }
+      },
+      {
+        "name": "Video frame rate",
+        "arg": ["-r"],
+        "type": "string",
+        "description": "set frame rate (Hz value, fraction or abbreviation)",
+        "defaultValue": "25",
+        "allowed": {
+          "if": ["Video input"]
+        }
+      },
+      {
+        "name": "Video aspect ratio",
+        "arg": ["-aspect"],
+        "type": "string",
+        "description": "set aspect ratio (4:3, 16:9 or 1.3333, 1.7777)",
+        "defaultValue": "16:9",
+        "allowed": {
+          "if": ["Video input"]
+        }
+      },
+      {
+        "name": "Video start time",
+        "arg": ["-ss"],
+        "type": "string",
+        "defaultValue": "00:00:00",
+        "allowed": {
+          "if": ["Video input"]
+        }
+      },
+      {
+        "name": "Video stop time",
+        "arg": ["-to"],
+        "type": "string",
+        "defaultValue": "00:00:00",
+        "allowed": {
+          "if": ["Video input"]
+        }
+      },
+      {
+        "name": "Audio input",
+        "arg": ["-i"],
+        "type": "string",
+        "defaultValue": "audio.mp3",
+        "repeat": true
+      },
+      {
+        "name": "Audio codec",
+        "arg": ["-c:a"],
+        "type": "option",
+        "optionValues": ["copy"],
+        "defaultValue": "copy",
+        "allowed": {
+          "if": ["Audio input"]
+        }
+      },
+      {
+        "name": "Overwrite file",
+        "arg": ["-y"]
+      },
+      {
+        "name": "File Out",
+        "arg": [""],
+        "type": "string"
+      }
+    ]
+  }
+}
