@@ -1,4 +1,4 @@
-# Simply Recipe Schema API (v1) Documentation
+# Simply Command Recipe API (v1) Documentation
 
 > v1 is incomplete, additional keys may be added to satisify certain conditions better. v2 will be created only if breaking changes.
 
